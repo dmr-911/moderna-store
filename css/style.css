@@ -42,6 +42,7 @@ body {
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
   border-radius: 10px;
+  background-color: rgb(109, 231, 231);
   border: 1px solid cyan;
 }
 .product-image {
@@ -51,6 +52,7 @@ body {
 .cart {
   width: 350px;
   /* border: 1px solid green; */
+    background-color: rgb(109, 231, 231);
   padding: 10px;
   box-shadow: 10px 10px 20px gray;
   border-radius: 5px;

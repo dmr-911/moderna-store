@@ -1,5 +1,6 @@
 const loadProducts = () => {
-  const url = `https://fakestoreapi.com/products`;
+  // const url = `https://fakestoreapi.com/products`;
+  const url = `../data.json`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => showProducts(data));
@@ -21,12 +22,29 @@ const showProducts = (products) => {
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
+      <p><small class="fw-bold">Rating: ${product.rating.rate}</small></p>
+      <p><small class="fw-bold">Reviews: ${product.rating.count}</small></p>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger" onclick="showDetails(${product.id})">Details</button></div>
+      <button class="btn btn-danger" onclick="getDetails(${product.id})">Details</button>
+      </div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
 };
+
+const getDetails = productId => {
+  // const url = `https://fakestoreapi.com/products/${productId}`;
+  // const url = `../data.json/${productId}`;
+  console.log(url);
+  
+  fetch(url)
+    .then(res => res.json())
+    .then(data => console.log(data));
+}
+const showDetails = data => {
+
+}
+
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
