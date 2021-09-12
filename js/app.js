@@ -1,11 +1,10 @@
 const loadProducts = () => {
-  // const url = `https://fakestoreapi.com/products`;
-  const url = `../data.json`;
+  document.getElementById('product-input').value = '';
+  const url = '../data.json';
   fetch(url)
     .then((response) => response.json())
     .then((data) => showProducts(data));
 };
-loadProducts();
 
 // show all product in UI 
 const showProducts = (products) => {
@@ -32,18 +31,6 @@ const showProducts = (products) => {
   }
 };
 
-const getDetails = productId => {
-  // const url = `https://fakestoreapi.com/products/${productId}`;
-  // const url = `../data.json/${productId}`;
-  console.log(url);
-  
-  fetch(url)
-    .then(res => res.json())
-    .then(data => console.log(data));
-}
-const showDetails = data => {
-
-}
 
 let count = 0;
 const addToCart = (id, price) => {
@@ -98,4 +85,5 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
-updateTotal();
+
+loadProducts();
