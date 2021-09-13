@@ -105,7 +105,7 @@ const onBuy = () => {
   `;
   if (parseInt(document.getElementById('total-Products').innerText) != 0) {
         document.getElementById("modal").innerHTML = `
-    <h3 class="text-success">Purchased!</h3>;
+    <h3 class="text-success">Items Purchased!</h3>;
   `; 
   }
   count = 0;
