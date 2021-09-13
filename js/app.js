@@ -1,3 +1,4 @@
+// Load products from data.json 
 const loadProducts = () => {
   document.getElementById('product-input').value = '';
   // const url = `https://fakestoreapi.com/products`;
@@ -34,6 +35,7 @@ const showProducts = (products) => {
   }
 };
 
+// Show specific item details 
 const showDetails = (price, rating) => {
   const modal = document.getElementById('modal');
   modal.innerHTML = `
@@ -42,6 +44,7 @@ const showDetails = (price, rating) => {
   `
 }
 
+// Global count initialized and update
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
@@ -51,6 +54,7 @@ const addToCart = (id, price) => {
   document.getElementById("total-Products").innerText = count;
 };
 
+// input value
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
   const converted = parseFloat(element);
@@ -108,6 +112,7 @@ const onBuy = () => {
     <h3 class="text-success">Items Purchased!</h3>;
   `; 
   }
+  // Global count update
   count = 0;
       setInnerText("total-Products", 0);
       setInnerText("price", 0);
