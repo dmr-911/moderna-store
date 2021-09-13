@@ -99,15 +99,21 @@ updateTotal();
 
 // Buy now button function
 const onBuy = () => {
-  setInnerText('total-Products', 0)
-  setInnerText('price', 0);
-  setInnerText('delivery-charge', 20);
-  setInnerText('total-tax', 0);
-  setInnerText('total', 20);
+  document.getElementById("modal").textContent = "";
   document.getElementById('modal').innerHTML = `
-    <h3 class="text-success">Purchased!</h3>;
+    <h3 class="text-danger">Buy Something!</h3>
   `;
+  if (parseInt(document.getElementById('total-Products').innerText) != 0) {
+        document.getElementById("modal").innerHTML = `
+    <h3 class="text-success">Purchased!</h3>;
+  `; 
+  }
+  count = 0;
+      setInnerText("total-Products", 0);
+      setInnerText("price", 0);
+      setInnerText("delivery-charge", 20);
+      setInnerText("total-tax", 0);
+    setInnerText("total", 20);
 }
-
 
 loadProducts();
