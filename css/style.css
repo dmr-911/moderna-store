@@ -2,6 +2,9 @@ body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
+.moderna-bg-dark{
+  background-color: white;
+}
 .search-field {
   border: none;
   border-radius: 50px;
@@ -38,13 +41,16 @@ body {
 .single-product {
   padding: 10px;
   transition: 0.6s;
+  background-color: white;
+  min-height: 550px;
 }
 .single-product:hover {
-  box-shadow: 4px 4px 7px gray;
+  box-shadow: 4px 4px 7px white;
   border-radius: 10px;
   background-color: rgb(109, 231, 231);
   border: 2px solid cyan;
 }
+
 .product-image {
   width: 150px;
   height: 150px;

@@ -24,9 +24,9 @@ const showProducts = (products) => {
       <h2>Price: $ ${product.price}</h2>
       <p><small class="fw-bold">Rating: ${product.rating.rate}</small></p>
       <p><small class="fw-bold">Reviews: ${product.rating.count}</small></p>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-primary">add to cart</button>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-primary fs-bold">Add to cart</button>
 
-      <button onclick="showDetails(${product.price}, ${product.rating.rate})" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button onclick="showDetails(${product.price}, ${product.rating.rate})" type="button" class="btn fw-bold btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Details
       </button>
       </div>
@@ -39,9 +39,11 @@ const showProducts = (products) => {
 const showDetails = (price, rating) => {
   const modal = document.getElementById('modal');
   modal.innerHTML = `
+    <h2><i>Product Details</i></h2>
+    <hr>
     <h3 class="text-success">Price : $ ${price}</h3>
     <p class="text-dark fw-bold">Rating : ${rating}</p>
-  `
+  `;
 }
 
 // Global count initialized and update
@@ -105,7 +107,7 @@ updateTotal();
 const onBuy = () => {
   document.getElementById("modal").textContent = "";
   document.getElementById('modal').innerHTML = `
-    <h3 class="text-danger">Buy Something!</h3>
+    <h3 class="text-danger">Please Buy Something!</h3>
   `;
   if (parseInt(document.getElementById('total-Products').innerText) != 0) {
         document.getElementById("modal").innerHTML = `

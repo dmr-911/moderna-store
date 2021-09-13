@@ -18,25 +18,27 @@
   <script src="https://kit.fontawesome.com/15c1546edc.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="moderna-bg-dark">
   <header class="mb-2">
-    <!-- Logo,Title and Search Bar started -->
-    <div class="row bg-dark pt-2 px-2">
-          <div class="col-6">
-          <h2 class="text-white"><i class="fab fa-mandalorian fw-bold text-info fs-1"></i> <small class="">Moderna Store</small></h2>
-    </div>
-
-        <div class="search-field col-6">
-      <div class="input-group mb-3 w-50 ms-auto">
-        <input id="product-input" type="text" class="form-control" placeholder="search product" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary btn-primary text-white" type="button" id="button-addon2">Search</button>
+    <!-- Navbar- Logo,Title and Search Bar started -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand d-block text-info" href="#"><i class="fas fa-vest fs-1"></i>  <span class="d-inline-block pb-3 fs-2">Moderna Fashion</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="d-flex ms-auto">
+            <input id="product-input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
       </div>
-    </div>
-    </div>
-        <!-- Logo,Title and Search Bar ended -->
+    </nav>
+      <!-- Logo,Title and Search Bar ended -->
   </header>
 
-  <main class="main">
+  <main class="main px-2">
     <div class="row">
       <div class="col-md-9 col-lg-9 col-sm-7">
         <!-- Products container started  -->
@@ -46,7 +48,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 id="product-title" class="modal-title fw-bold text-primary" id="exampleModalLabel">Product</h5>
+                  <!-- <h5 id="product-title" class="modal-title fw-bold text-primary" id="exampleModalLabel">Product</h5> -->
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div id="modal" class="modal-body">
@@ -124,7 +126,7 @@
 
   <footer>
     <section class="contianer">
-      <p class="text-center fw-bold"><small>All rights reserved to @DMR&Co. Limited</small></p>
+      <p class="text-center fw-bold text-white"><small>All rights reserved to @DMR&Co. Limited</small></p>
     </section>
   </footer>
 
