@@ -36,20 +36,20 @@
   <main class="main">
     <div class="row">
       <div class="col-md-9 col-lg-9 col-sm-7">
-        <div id="all-products" class="row g-3">
+        <div id="all-products" class="row g-3 pb-4">
           <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 id="product-title" class="modal-title" id="exampleModalLabel">Product</h5>
+                  <h5 id="product-title" class="modal-title fw-bold text-primary" id="exampleModalLabel">Product</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div id="modal" class="modal-body">
                    <h3>Buy something</h3>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
@@ -105,7 +105,7 @@
 
 
                       <!-- Button trigger modal -->
-            <button onclick="onBuy()" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button onclick="onBuy()" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Buy Now
             </button>
           </div>

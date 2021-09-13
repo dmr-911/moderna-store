@@ -14,7 +14,7 @@ const showProducts = (products) => {
     const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `<div id="single-product" class="single-product">
+    div.innerHTML = `<div id="single-product" class="single-product border border-2 rounded border-info">
       <div>
     <img class="product-image" src=${image}></img>
       </div>
@@ -23,7 +23,7 @@ const showProducts = (products) => {
       <h2>Price: $ ${product.price}</h2>
       <p><small class="fw-bold">Rating: ${product.rating.rate}</small></p>
       <p><small class="fw-bold">Reviews: ${product.rating.count}</small></p>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-primary">add to cart</button>
 
       <button onclick="showDetails(${product.price}, ${product.rating.rate})" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Details
@@ -37,8 +37,8 @@ const showProducts = (products) => {
 const showDetails = (price, rating) => {
   const modal = document.getElementById('modal');
   modal.innerHTML = `
-    <h3>Price : ${price}</h3>
-    <p>Rating : ${rating}</p>
+    <h3 class="text-success">Price : $ ${price}</h3>
+    <p class="text-dark fw-bold">Rating : ${rating}</p>
   `
 }
 
