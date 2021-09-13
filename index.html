@@ -20,15 +20,20 @@
 
 <body>
   <header>
-    <h1 class="text-center text-primary"><i class="fab fa-mandalorian"></i>  <span class="">Moderna Store</span></h1>
-  </header>
-  <main class="main">
-    <div class="search-field">
+    <div class="row bg-dark pt-2">
+          <div class="col-6">
+          <h1 class="text-center text-info"><i class="fab fa-mandalorian"></i>  <span class="">Moderna Store</span></h1>
+    </div>
+
+        <div class="search-field col-6">
       <div class="input-group mb-3 w-50 mx-auto">
         <input id="product-input" type="text" class="form-control" placeholder="search product" aria-label="Recipient's username" aria-describedby="button-addon2">
         <button class="btn btn-outline-secondary btn-primary text-white" type="button" id="button-addon2" onclick="loadProducts()">Search</button>
       </div>
     </div>
+    </div>
+  </header>
+  <main class="main">
     <div class="row">
       <div class="col-md-9 col-lg-9 col-sm-7">
         <div id="all-products" class="row g-3">
@@ -37,7 +42,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Product</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div id="modal" class="modal-body">
@@ -45,7 +50,6 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
               </div>
             </div>
@@ -97,7 +101,13 @@
             </tbody>
           </table>
           <div class="parces text-center">
-            <button class="btn btn-primary text-center" onclick="onBuy()">Buy Now</button>
+              <!-- <button class="btn btn-primary" onclick="onBuy()">Buy Now</button> -->
+
+
+                      <!-- Button trigger modal -->
+            <button onclick="onBuy()" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Buy Now
+            </button>
           </div>
         </div>
       </div>

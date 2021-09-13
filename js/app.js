@@ -96,4 +96,18 @@ const updateTotal = () => {
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
 updateTotal();
+
+// Buy now button function
+const onBuy = () => {
+  setInnerText('total-Products', 0)
+  setInnerText('price', 0);
+  setInnerText('delivery-charge', 20);
+  setInnerText('total-tax', 0);
+  setInnerText('total', 20);
+  document.getElementById('modal').innerHTML = `
+    <h3 class="text-success">Purchased!</h3>;
+  `;
+}
+
+
 loadProducts();
