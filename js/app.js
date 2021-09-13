@@ -1,5 +1,6 @@
 const loadProducts = () => {
   document.getElementById('product-input').value = '';
+  // const url = `https://fakestoreapi.com/products`;
   const url = '../data.json';
   fetch(url)
     .then((response) => response.json())
@@ -10,11 +11,10 @@ const loadProducts = () => {
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
-    console.log(product)
     const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `<div class="single-product">
+    div.innerHTML = `<div id="single-product" class="single-product">
       <div>
     <img class="product-image" src=${image}></img>
       </div>
@@ -24,13 +24,23 @@ const showProducts = (products) => {
       <p><small class="fw-bold">Rating: ${product.rating.rate}</small></p>
       <p><small class="fw-bold">Reviews: ${product.rating.count}</small></p>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button class="btn btn-danger" onclick="getDetails(${product.id})">Details</button>
+
+      <button onclick="showDetails(${product.price}, ${product.rating.rate})" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Details
+      </button>
       </div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
 };
 
+const showDetails = (price, rating) => {
+  const modal = document.getElementById('modal');
+  modal.innerHTML = `
+    <h3>Price : ${price}</h3>
+    <p>Rating : ${rating}</p>
+  `
+}
 
 let count = 0;
 const addToCart = (id, price) => {
@@ -53,7 +63,6 @@ const updatePrice = (id, value) => {
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
   document.getElementById(id).innerText = total.toFixed(2);
-  updateTotal();
 };
 
 // set innerText function
@@ -76,6 +85,7 @@ const updateTaxAndCharge = () => {
     setInnerText("delivery-charge", 60);
     setInnerText("total-tax", priceConverted * 0.4);
   }
+    updateTotal();
 };
 
 //grandTotal update function
@@ -85,5 +95,5 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
-
+updateTotal();
 loadProducts();
