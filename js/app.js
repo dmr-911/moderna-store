@@ -12,25 +12,36 @@ const loadProducts = () => {
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
+    // creating stars
+    const p = document.createElement('p');
+    const rating = Math.round(product.rating.rate);
+
+    for (let i = 0; i < rating; i++){
+      p.innerHTML += `<i class="fas fa-star text-danger"></i>`;
+    }
+
     const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `<div id="single-product" class="single-product border border-2 rounded border-info">
+    const singleProduct = document.createElement('div');
+    singleProduct.classList.add('single-product', 'border', 'border-2', 'rounded', 'border-info')
+    singleProduct.innerHTML = `
       <div>
     <img class="product-image" src=${image}></img>
       </div>
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
-      <p><small class="fw-bold">Rating: ${product.rating.rate}</small></p>
-      <p><small class="fw-bold">Reviews: ${product.rating.count}</small></p>
+      <p><small class="fw-bold">Rating: ${product.rating.rate}/Reviews: ${product.rating.count}</small></p>
+
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-primary fs-bold">Add to cart</button>
 
       <button onclick="showDetails(${product.price}, ${product.rating.rate})" type="button" class="btn fw-bold btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Details
       </button>
-      </div>
       `;
+    singleProduct.prepend(p);
+    div.appendChild(singleProduct);
     document.getElementById("all-products").appendChild(div);
   }
 };
